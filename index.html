@@ -1,0 +1,371 @@
+<head>
+    <title>(2) WhatsApp</title>
+    <link id="favicon" rel="shortcut icon" href="https://web.whatsapp.com/img/favicon/1x/favicon.png" type="image/png" />
+	<meta charset="utf-8"/>
+</head>
+
+<style>
+    *{
+        font-family : Roboto, sans-serif;
+        padding:0;
+        margin:0;
+        outline:0;
+	    list-style:none;
+    }
+    .web{
+        background: #d7dbd6;
+    }
+    .header-main{
+        background:#009688;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 127px;
+        left: 0;
+    }
+    .app{
+        width: 1390px;
+        height: 950px;
+        background: #fff;
+        position: relative;
+        z-index: 200;
+        margin: 0px auto;
+        top: 18px;
+        box-shadow: 1px 1px rgba(55, 71, 79, 0.3);
+        border-radius:2px;
+    }
+    .app-left{
+        -webkit-flex: none;
+        flex: none;
+        height: 59px;
+        width: 30%;
+        background-color: #eee;
+        box-sizing: border-box;
+        padding: 10px;
+        position: relative;
+        z-index: 1000;
+        padding-right: 16px;
+        padding-left: 15px;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+        border-right:1px solid rgba(55, 71, 79, 0.1);
+        border-bottom:1px solid rgba(55, 71, 79, 0.1);
+    }
+    .profile-img-top{
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+    .icons-right{
+        float: right;
+        position: relative;
+        top: 9px;
+        right: -5px;
+    }
+    .padding{
+        padding-right: 30px;
+        cursor: pointer;
+    }
+    .icons-right .normal-icons{
+        padding-right: 20px;
+        cursor: pointer;
+    }
+    .msg-right{
+        float: right;
+        width: 972px;
+        height: auto;
+        top: 90px;
+        position: relative;
+    }
+    .back-man{
+        background-image: url(static/mantenha.jpg);
+        width: 356px;
+        height: 355px;
+        margin: 0 auto;
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        opacity: 1;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        transition: height .3s ease;
+    }
+    .alert-left{
+        -webkit-flex: none;
+        flex: none;
+        height: 90px;
+        width: 30%;
+        background-color: #9de1fe;
+        box-sizing: border-box;
+        padding: 10px;
+        position: relative;
+        z-index: 1000;
+        padding-right: 16px;
+        padding-left: 15px;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+    }
+    .alert{
+        top: 10px;
+        position: relative;
+    }
+    .alert-left .fonte-news{
+        font-size: 16px;
+        line-height: 21px;
+        color: rgba(55, 71, 79, 0.92);
+        position:relative;
+        top:-17px;
+        left:10px;
+        font-weight: normal;
+        text-decoration: none solid rgb(55, 71, 79);
+    }
+    .novas{
+        font-size: 14px;
+        color: rgba(55, 71, 79, 0.74);
+        text-decoration: underline;
+        position:relative;
+        top:-14px;
+        left: 63px;
+        cursor:pointer;
+    }
+    .search{
+        -webkit-flex: none;
+        flex: none;
+        height: 50px;
+        width: 30%;
+        background-color: #fff;
+        box-sizing: border-box;
+        padding: 10px;
+        position: relative;
+        z-index: 1000;
+        padding-right: 16px;
+        padding-left: 15px;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+        border-bottom:1px solid rgba(55, 71, 79, 0.1);
+        border-right:2px solid rgba(55, 71, 79, 0.1);
+    }
+    .search-input{
+        height:100%;
+        border:none;
+        width:100%;
+        color:#555;
+        padding-left:50px;
+
+    }
+    .find{
+        position:absolute;
+        padding-left:5px;
+        padding-top:3px;
+    }
+    .conversars{
+        -webkit-flex: none;
+        flex: none;
+        height: 78.8%;
+        width: 30%;
+        background-color: #fff;
+        box-sizing: border-box;
+        position: absolute;
+        z-index: 1000;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+        border-bottom:1px solid rgba(55, 71, 79, 0.1);
+        border-right:2px solid rgba(55, 71, 79, 0.1);
+        overflow-y: auto;
+    }
+    .conversars li{
+        height: 60px;
+        width: 100%;
+        padding-top:10px;
+        cursor:pointer;
+        border-bottom:1px solid rgba(55, 71, 79, 0.1);
+    }
+    .avatar-image{
+        border-radius: 50%;
+        height: 50px;
+        position: relative;
+        top: 5px;
+        left: 10px;
+    }
+    .name-people{
+        position:relative;
+        left:20px;
+        color: #262626;
+        top:-25px;
+    }
+    .msg{
+        color: #454545;
+        font-size: 14px;
+        position: relative;
+        top: -6px;
+        left: -70px;
+    }
+    .conversars li:hover{
+        background: #e9ebeb;
+        border-bottom:1px solid rgba(55, 71, 79, 0.1);
+    }
+</style>
+
+<html>
+    <body class="web">
+            <div class="header-main">
+            </div>
+            <div class="app">
+                <div class="app-left">
+                    <div class="profile-top">
+                        <img src="https://dyn.web.whatsapp.com/pp?t=s&u=554799500474%40c.us&i=1500482700&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F19710847_862689693883188_2792004144292954112_n.jpg%3Foe%3D59D10734%26oh%3Db088e8a23d23cd71407433207b0aef32" class="profile-img-top"/>
+                        <div class="icons-right">
+                            <span class="padding">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#727A7E" d="M12 20.664a9.163 9.163 0 0 1-6.521-2.702.977.977 0 0 1 1.381-1.381 7.269 7.269 0 0 0 10.024.244.977.977 0 0 1 1.313 1.445A9.192 9.192 0 0 1 12 20.664zm7.965-6.112a.977.977 0 0 1-.944-1.229 7.26 7.26 0 0 0-4.8-8.804.977.977 0 0 1 .594-1.86 9.212 9.212 0 0 1 6.092 11.169.976.976 0 0 1-.942.724zm-16.025-.39a.977.977 0 0 1-.953-.769 9.21 9.21 0 0 1 6.626-10.86.975.975 0 1 1 .52 1.882l-.015.004a7.259 7.259 0 0 0-5.223 8.558.978.978 0 0 1-.955 1.185z"></path></svg>
+                            </span>
+                            <span class="normal-icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path opacity=".55" fill="#263238" d="M19.005 3.175H4.674C3.642 3.175 3 3.789 3 4.821V21.02l3.544-3.514h12.461c1.033 0 2.064-1.06 2.064-2.093V4.821c-.001-1.032-1.032-1.646-2.064-1.646zm-4.989 9.869H7.041V11.1h6.975v1.944zm3-4H7.041V7.1h9.975v1.944z"></path></svg>
+                            </span>
+                            <span class="normal-icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#263238" fill-opacity=".6" d="M12 7a2 2 0 1 0-.001-4.001A2 2 0 0 0 12 7zm0 2a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 9zm0 6a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 15z"></path></svg>
+                            </span>
+                            </div>
+                    </div>
+                </div>
+                <div class="msg-right">
+                    <div class="back-man">
+                    </div>
+                </div>
+                <div class="alert-left">
+                    <span class="alert">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><path fill="#FFF" fill-opacity=".9" d="M24.154 2C11.919 2 2 11.924 2 24.165S11.919 46.33 24.154 46.33s22.154-9.924 22.154-22.165S36.389 2 24.154 2zm-.744 15.428v-.618c0-.706.618-1.324 1.324-1.324s1.323.618 1.323 1.324v.618c2.559.618 4.412 2.823 4.412 5.559v3.176l-8.294-8.294a5.056 5.056 0 0 1 1.235-.441zm1.323 15.706a1.77 1.77 0 0 1-1.765-1.765h3.529a1.768 1.768 0 0 1-1.764 1.765zm7.236-.883l-1.765-1.765H17.233v-.882l1.765-1.765v-4.853a5.56 5.56 0 0 1 .794-2.912l-2.559-2.559 1.147-1.147 14.735 14.736-1.146 1.147z"></path></svg>
+                    </span>
+                    <span class="fonte-news">
+                    Receba notificações de novas mensagens
+                    </span>
+                    <span class="novas">
+                    Ativar notificações na área de trabalho
+                    </span>
+                    </div>
+                    <div class="search">
+                            <svg class="find" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#263238" fill-opacity=".3" d="M15.009 13.805h-.636l-.22-.219a5.184 5.184 0 0 0 1.256-3.386 5.207 5.207 0 1 0-5.207 5.208 5.183 5.183 0 0 0 3.385-1.255l.221.22v.635l4.004 3.999 1.194-1.195-3.997-4.007zm-4.808 0a3.605 3.605 0 1 1 0-7.21 3.605 3.605 0 0 1 0 7.21z"></path></svg>
+                        <input type="text" placeholder="Procurar ou começar uma nova conversa" class="search-input"/>
+                    </div>
+                    <div class="conversars">
+                        <li class="ativo">
+                         <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                        <span class="name-people">
+                            Fulano Silva
+                        </span>
+                        <span class="msg">
+                            +55 48 99501231: ehhhehueehhue
+                        </span>
+                        </li>
+                        <li>
+                         <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                               <span class="name-people">
+                                   Fulano Silva
+                               </span>
+                               <span class="msg">
+                                   +55 48 99501231: ehhhehueehhue
+                               </span>
+                        </li>
+                        <li>
+                                <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                                      <span class="name-people">
+                                          Fulano Silva
+                                      </span>
+                                      <span class="msg">
+                                          +55 48 99501231: ehhhehueehhue
+                                      </span>
+                               </li>
+                               <li>
+                                    <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                                          <span class="name-people">
+                                              Fulano Silva
+                                          </span>
+                                          <span class="msg">
+                                              +55 48 99501231: ehhhehueehhue
+                                          </span>
+                                   </li>
+                                   <li>
+                                        <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                                              <span class="name-people">
+                                                  Fulano Silva
+                                              </span>
+                                              <span class="msg">
+                                                  +55 48 99501231: ehhhehueehhue
+                                              </span>
+                                       </li>
+                                       <li>
+                                               <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                                                     <span class="name-people">
+                                                         Fulano Silva
+                                                     </span>
+                                                     <span class="msg">
+                                                         +55 48 99501231: ehhhehueehhue
+                                                     </span>
+                                              </li>
+                                              <li>
+                                                   <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                                                         <span class="name-people">
+                                                             Fulano Silva
+                                                         </span>
+                                                         <span class="msg">
+                                                             +55 48 99501231: ehhhehueehhue
+                                                         </span>
+                                                  </li>
+                                                  <li>
+                                                        <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                                                              <span class="name-people">
+                                                                  Fulano Silva
+                                                              </span>
+                                                              <span class="msg">
+                                                                  +55 48 99501231: ehhhehueehhue
+                                                              </span>
+                                                       </li>
+                                                       <li>
+                                                               <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                                                                     <span class="name-people">
+                                                                         Fulano Silva
+                                                                     </span>
+                                                                     <span class="msg">
+                                                                         +55 48 99501231: ehhhehueehhue
+                                                                     </span>
+                                                              </li>
+                                                              <li>
+                                                                   <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                                                                         <span class="name-people">
+                                                                             Fulano Silva
+                                                                         </span>
+                                                                         <span class="msg">
+                                                                             +55 48 99501231: ehhhehueehhue
+                                                                         </span>
+                                                                  </li>
+                                                                  <li>
+                                                                        <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                                                                              <span class="name-people">
+                                                                                  Fulano Silva
+                                                                              </span>
+                                                                              <span class="msg">
+                                                                                  +55 48 99501231: ehhhehueehhue
+                                                                              </span>
+                                                                       </li>
+                                                                       <li>
+                                                                               <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                                                                                     <span class="name-people">
+                                                                                         Fulano Silva
+                                                                                     </span>
+                                                                                     <span class="msg">
+                                                                                         +55 48 99501231: ehhhehueehhue
+                                                                                     </span>
+                                                                              </li>
+                                                                              <li>
+                                                                                   <img src="https://dyn.web.whatsapp.com/pp?t=s&u=557788770640-1463008476%40g.us&i=1463009332&e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F16827053_270989210000699_600199088088023040_n.jpg%3Foe%3D59D1126D%26oh%3D0559323164166d694ac904eaf2a90bf5" class="avatar-image"/>
+                                                                                         <span class="name-people">
+                                                                                             Fulano Silva
+                                                                                         </span>
+                                                                                         <span class="msg">
+                                                                                             +55 48 99501231: ehhhehueehhue
+                                                                                         </span>
+                                                                                  </li>
+                    </div>
+            </div>
+    </body>
+</html>
